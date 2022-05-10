@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -12,7 +13,13 @@ export class GifsService {
   }
 
   agregarGifs(query:string){
+
+    query=query.trim().toLocaleLowerCase()
+    if(!this._historial.includes(query)) {
+    this._historial=this._historial.splice(0,9)
+    
     this._historial.unshift(query)
     console.log(this._historial)
+    }
   }
 }

@@ -15,8 +15,11 @@ export class BusquedaComponent  {
 
 
   buscar(){
+    
     const valor=this.txtBuscar.nativeElement.value
     console.log(valor)
+    
+    if (valor.trim()==="") return;
 
     this.gifsServices.agregarGifs(valor)
     this.txtBuscar.nativeElement.value=""
