@@ -31,7 +31,7 @@ export class GifsService {
     
   
 
-  agregarGifs(query:string){ // este query viene del campo input del html
+  agregarGifs(query:string){ // este query viene del campo input del html. En este caso del html del componente busqueda (que tiene un método buscar() , que a su vez llama a este método agregarGifs())
 
     query=query.trim().toLocaleLowerCase()  // para eliminar los espacions en blanco y convertirla en lower case . Recordar que en pantalla se mostrara correctamente escrita porque se usa en el HTML el pipe || titlecase
     if(!this._historial.includes(query)) {   // para que no se repita. Aqui se ejecuta si "no" incluye el ekemnteo por eso el signo !
