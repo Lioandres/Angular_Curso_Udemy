@@ -4,7 +4,7 @@ import { GifsService } from '../../gifs/services/gifs.service';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styles: [
+  styleUrls: ['./sidebar.component.css'
   ]
 })
 export class SidebarComponent {
@@ -15,6 +15,11 @@ export class SidebarComponent {
     return this.gifsService.historial
   }
 
+  reBuscar(item:string){
+    console.log(item)
+    this.gifsService.agregarGifs(item)
+
+  }
   
 
 
